@@ -19,6 +19,22 @@ namespace PRNG
         }
         public LCG(double seed, double multiplier, double increment, double modulus)
         {
+            if(modulus <= 0)
+            {
+                throw new ArgumentOutOfRangeException($"Rule: 0 < {nameof(modulus)}");
+            }
+            if(seed < 0 || seed >= modulus)
+            {
+                throw new ArgumentOutOfRangeException($"Rule: 0 <= {nameof(seed)} < modulus");
+            }
+            if(multiplier <=0 || multiplier >= modulus){
+                throw new ArgumentOutOfRangeException($"Rule: 0 < {nameof(multiplier)} < modulus");
+            }
+            if (increment <= 0 || increment >= modulus)
+            {
+                throw new ArgumentOutOfRangeException($"Rule: 0 < {nameof(increment)} < modulus");
+            }
+
             this.seed = seed;
             this.multiplier = multiplier;
             this.increment = increment;
