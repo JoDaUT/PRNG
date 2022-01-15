@@ -1,4 +1,4 @@
-# PRNG
+# Pseudorandom number generator
 
 Pseudo-random number generator algorithms require a seed to generate the sequence of semi-aleatory numbers.
 
